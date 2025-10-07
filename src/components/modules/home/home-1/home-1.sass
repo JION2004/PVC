@@ -1,0 +1,103 @@
+.home-1-slider
+  position: relative // Needed for absolute positioning of children
+  .swiper-container
+    width: 100%
+    height: 960px // Or your desired height
+
+    // Mobile height adjustment
+    @media (max-width: 767px) // Tailwind's 'md' breakpoint is typically 768px
+      height: 600px // Adjust this value as needed for mobile
+    
+    .swiper-wrapper
+      will-change: transform
+
+    .swiper-slide
+      position: relative // Needed for absolute positioning of child
+      text-align: center
+      font-size: 18px
+      background: #fff
+
+      &::before // Overlay for the image
+        content: ''
+        position: absolute
+        top: 0
+        left: 0
+        width: 100%
+        height: 100%
+        background-color: rgba(0, 0, 0, 0.4) // Semi-transparent black
+        z-index: 1 // Ensure it's above the image
+      
+      /* Center slide content */
+      display: flex
+      justify-content: center
+      align-items: center
+
+      img
+        display: block
+        width: 100%
+        height: 100%
+        object-fit: cover
+
+      .slide-text
+        // Base styles for mobile
+        position: absolute
+        z-index: 2 // Ensure text is above the overlay
+        height: auto // Auto height for responsive behavior
+        font-weight: bold
+        color: white
+        text-align: left
+        // Mobile styles
+        width: 90%
+        left: 5%
+        font-size: 16px
+        // Tablet styles
+        @screen md
+          width: 80%
+          left: 10%
+          font-size: 24px
+        // Desktop styles
+        @screen lg
+          width: 1073px
+          height: 141px // Restore fixed height for desktop
+          left: 156px
+          font-size: 36px
+
+  // Custom Pagination
+  .home-1-pagination
+    display: none // Hidden by default on mobile
+
+    @screen xl
+      display: flex // Becomes a flex container on xl screens
+      position: absolute
+      bottom: 40px
+      left: 30px
+      right: 0
+      z-index: 10
+      justify-content: space-around
+      padding: 0 40px
+
+    .pagination-item
+      cursor: pointer
+      display: flex
+      
+      flex-direction: column
+      gap: 20px
+
+      .text
+        
+        transition: color 0.3s ease
+        @apply rem:text-[16px] font-bold text-white text-left 
+
+      .underline
+        width: 320px // Gạch chân rộng bằng text
+        // --- TÙY CHỈNH ĐỘ DÀY GẠCH CHÂN TẠI ĐÂY ---
+        height: 3px
+        background-color: #888 // Inactive underline color (gray)
+        transition: background-color 0.3s ease
+
+      &.active
+        .text
+          color: white // Active text color
+        .underline
+          background-color: white // Active underline color
+

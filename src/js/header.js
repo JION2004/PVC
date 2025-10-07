@@ -15,9 +15,24 @@ export const header = {
 		}
 	},
 	mobile: function () {
-		$(".header-hambuger").on("click", function () {
+		const hamburger = $(".js-toggle-menu");
+		const mobileContainer = $(".header-mobile");
+
+		// --- Open Menu Logic ---
+		hamburger.on("click", function () {
 			$(this).toggleClass("active");
-			$("body").toggleClass("isOpenMenu");
+			mobileContainer.toggleClass("is-open");
+		});
+
+		// --- Close Menu Logic (using event delegation for robustness) ---
+		$(document).on("click", ".mobile-overlay, .mobile-menu-list .close-btn", function () {
+			hamburger.removeClass("active");
+			mobileContainer.removeClass("is-open");
+		});
+
+		// --- Dropdown Submenu Logic (using event delegation for robustness) ---
+		$(document).on("click", ".mobile-menu-list .has-dropdown .dropdown-toggle", function() {
+			$(this).closest(".has-dropdown").toggleClass("open");
 		});
 	},
 	initVariable: function () {
