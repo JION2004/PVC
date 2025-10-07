@@ -1,0 +1,109 @@
+header
+  @apply sticky top-0 left-0 w-screen
+  @apply text-black z-10
+  font-family: 'Exo 2', sans-serif
+  .header-language
+    @apply flex items-center gap-2 text-[#41924F]
+    position: relative
+    &::after
+      content: '|'
+      position: absolute
+      color: #41924F        
+      left:50%
+      transform: translateX(-50%) 
+    .header-language-active
+      @apply flex items-center        
+      li.wpml-ls-current-language
+        @apply opacity-100
+      li:not(.wpml-ls-current-language)
+        @apply hidden
+    .header-language-list
+      li:not(.wpml-ls-current-language)
+        @apply opacity-50
+      li.wpml-ls-current-language
+        @apply hidden
+.hover-text-top
+    @apply pb-2 transition duration-300
+    &:hover
+        @apply text-[#41924F] border-b-2 border-[#41924F]
+.hover-text-bottom
+    @apply pb-7 transition duration-300
+    &:hover
+        @apply text-[#41924F] border-b-2 border-[#41924F]
+
+.group:hover .hover-text-bottom
+    @apply text-[#41924F] border-b-2 border-[#41924F]
+.header-mobile 
+  position: relative
+  z-index: 999
+
+  .mobile-overlay 
+    position: fixed
+    inset: 0
+    background: rgba(0, 0, 0, 0.5)
+    opacity: 0
+    pointer-events: none
+    transition: opacity 0.4s ease
+
+  .mobile-menu-list 
+    position: fixed
+    top: 0
+    right: 0
+    height: 100vh
+    width: 100%
+    max-width: 350px
+    background: #41924F
+    transform: translateX(100%)
+    transition: transform 0.4s ease
+    padding: 2rem
+    overflow-y: auto
+    box-shadow: -4px 0 10px rgba(0, 0, 0, 0.2)
+
+    ul 
+      list-style: none
+      
+      li 
+        margin: 1rem 0
+        a
+        
+          color: #fff
+          font-size: 1.2rem
+          text-decoration: none
+          display: inline-flex
+          align-items: center
+          justify-content: space-between
+          width: 100%
+          cursor: pointer
+          
+
+    // submenu
+    .dropdown-menu
+      max-height: 0
+      overflow: hidden
+      transition: max-height 0.4s ease
+      padding-left: 1rem
+
+      li
+        margin: 0.5rem 0
+        a 
+          font-size: 1.1rem
+          color: #fff
+          opacity: 0.9
+
+    .has-dropdown.open 
+      .dropdown-menu
+        max-height: 300px // tùy nội dung
+      .dropdown-toggle i
+        transform: rotate(180deg)
+
+      .dropdown-toggle 
+        i 
+          transition: transform 0.4s ease
+
+  &.is-open 
+    .mobile-overlay 
+      opacity: 1
+      pointer-events: all
+    
+    .mobile-menu-list 
+      transform: translateX(0)

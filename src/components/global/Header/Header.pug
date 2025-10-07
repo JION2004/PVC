@@ -1,0 +1,97 @@
+header(class="bg-white")
+    nav(class="flex justify-between mx-4 xl:mx-[160px]")
+        .header-logo
+            a(href="")
+                img(src="./img/logo.png", alt="")(class="w-auto h-30")
+        .header-menu(class="hidden xl:block") 
+            .menu-top(class="text-base mt-2 mb-3 flex justify-end border-b boder-[#000000]  ")
+                ul(class="flex gap-8 items-center")
+                    li(class="hidden xl:block")
+                        a(href=""  class="hover-text-top  ") Tuyển dụng
+                    li(class="hidden xl:block")
+                        a(href=""  class="hover-text-top ") Liên hệ
+                    li <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--!Font Awesome Free v6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.--><path d="M164.9 24.6c-7.7-18.6-28-28.5-47.4-23.2l-88 24C12.1 30.2 0 46 0 64C0 311.4 200.6 512 448 512c18 0 33.8-12.1 38.6-29.5l24-88c5.3-19.4-4.6-39.7-23.2-47.4l-96-40c-16.3-6.8-35.2-2.1-46.3 11.6L304.7 368C234.3 334.7 177.3 277.7 144 207.3L193.3 167c13.7-11.2 18.4-30 11.6-46.3l-40-96z"/></svg>
+                        
+                    li(class="hidden xl:block")
+                        ul(class="flex gap-2 items-center") 
+                            li(class="border-solid w-9 h-9 bg-gray-50 p-3 flex items-center justify-center ") <i class="fa-regular fa-phone text-[#FB0200] text-m "></i>
+                            li(class="text-[#FB0200] font-bold") 0392709254
+                    li(class= "flex gap-3")
+                        .header-language 
+                            +HeaderLanguage()
+                        ul(class="flex ")
+                            li(class="border-solid w-9 h-9 bg-gray-50 p-3 flex items-center justify-center cursor-pointer header-search  ") <i class="fa-regular fa-magnifying-glass text-[#41924F] header-search"></i>
+                            li(class="hidden xl:block")
+                                a(href="" class="border-solid w-9 h-9  p-3 flex items-center justify-center bg-[#1067E5] ") <i class="fa-brands fa-facebook-f text-[#fff] "></i>
+                            li(class="hidden xl:block")
+                                a(href="" class="border-solid w-9 h-9 bg-[#FB0200]  p-3 flex items-center justify-center ") <i class="fa-brands fa-youtube  text-[#fff]"></i>
+            .menu-bottom(class="hidden xl:block") 
+                ul(class="flex gap-9 font-bold pt-3 rem:text-[18px]")
+                        li
+                            a(href="" class="pb-7 border-b-2 border-[#41924F]") <i class="fa-regular fa-house  text-[#41924F]"></i>
+                        li
+                            a(href="" class="hover-text-bottom") Giới thiệu
+                        li
+                            a(href="" class="hover-text-bottom") Lĩnh vực hoạt động
+                        li
+                            a(href="" class="hover-text-bottom") Dự án tiêu biểu
+                        li
+                            a(href="" class="hover-text-bottom") Quan hệ cổ đông
+                        li
+                            a(href="" class="hover-text-bottom") ESG
+                        li(class="relative group ")
+                            a(href="" class="hover-text-bottom pb-[30px] inline-block ") Tin tức - Thư viện
+                            ul(class=" absolute hidden group-hover:block  left-0 bg-[#41924F] shadow-lg w-40 z-10 p-2 border border-gray-200 rounded-2")
+                                li
+                                    a(href="" class="block p-1  text-base font-light text-white hover:text-blue-400 ") Tin hoạt động
+                                li
+                                    a(href="" class="block p-1 text-base font-light text-white hover:text-blue-400") Thông cáo báo chí
+                                li
+                                    a(href="" class="block p-1 text-base font-light text-white hover:text-blue-400") Thư viện ảnh
+                                li
+                                    a(href="" class="block p-1 text-base font-light text-white hover:text-blue-400") Thư viện tài liệu
+                        li
+                            a(href="" class="hover-text-bottom") Tuyển dụng
+                        li
+                            a(href="" class="hover-text-bottom") Liên hệ
+        .header-mobile(class="xl:hidden mt-5 relative flex gap-2")
+            ul
+                li(class="w-20 h-20 border-solid p-3  flex items-center justify-center cursor-pointer bg-gray-100 rounded-2 header-search ") <i class="fa-regular fa-magnifying-glass text-[#41924f] rem:text-[40px] header-search"></i>
+            .header-mobile-hamberger(class="w-20 h-20 border-solid p-3  flex items-center justify-center cursor-pointer bg-[#41924F] rounded-2 js-toggle-menu relative right-0")
+                <i class="fa-solid fa-bars text-[#fff] rem:text-40 "></i>
+            .mobile-overlay
+            .mobile-menu-list
+                ul(class="font-bold")
+                    
+                    li
+                        a(href="") Home
+                    li
+                        a(href="") Giới thiệu
+                    li
+                        a(href="") Lĩnh vực hoạt động
+                    li
+                        a(href="") Dự án tiêu biểu
+                    li
+                        a(href="") Quan hệ cổ đông
+                    li
+                        a(href="") ESG
+                    li.has-dropdown
+                        .dropdown-toggle.flex.items-center.justify-between.cursor-pointer
+                            span(class="text-[1.2rem] text-white") Tin tức - Thư viện
+                            i.fa-solid.fa-chevron-down.text-white
+                        ul.dropdown-menu
+                            li
+                                a(href="") Tin tức 1
+                            li
+                                a(href="") Tin tức 2
+                            li
+                                a(href="") Tin tức 3
+                            li
+                                a(href="") Tin tức 4
+                    li
+                        a(href="") Liên hệ 
+                    li
+                        a(href="") Tuyển dụng
+                    li.close-btn(class="cursor-pointer rem:text-[1.2rem] text-white  hover:text-red-400") 
+                        <i class="fa-solid fa-x"></i> Đóng 
+include ../../../../plugins/ComponentsUi/HeaderSearch/HeaderSearch.pug

@@ -1,0 +1,73 @@
+.fire
+    top: 4rem
+    left: 20%
+    transform: translateX(-50%)
+.footer-top
+    @apply py-20 ml-40 mr-40
+    @apply hidden xl:block
+.content-img
+    img
+        @apply w-auto h-auto
+.footer-top-item_2 
+    @apply ml-40 mr-40 pt-5
+.footer-top-title
+    @apply mb-5 text-white
+    h1
+        @apply rem:text-[20px] font-bold uppercase
+.footer-top-body 
+    li
+        @apply py-1 transition duration-300
+        
+        p
+            @apply text-white rem:text-[18px] font-normal cursor-text
+        
+        a
+            @apply text-white rem:text-[18px] font-normal
+            &:hover
+                @apply  border-b-2 border-[#FFF]
+        input
+            @apply rem:w-[300px] rem:h-[42px] bg-gray-300
+        button.button-send
+            @apply rem:w-[82px] rem:h-[44px] border-solid border-gray-500 bg-blue-800 border-2  ml-2 text-white transition-all flex items-center justify-center gap-2
+            i
+                @apply transition-transform
+            &:hover
+                @apply bg-[#41924F] 
+                i
+                    transform: translateX(-4px)
+        div
+            @apply flex gap-3 mt-3
+
+.icon-item_2
+    li
+        @apply border border-solid border-white w-10 h-10 rounded-full flex items-center justify-center bg-white
+        i
+            @apply rem:text-[22px] text-[#41924F]
+.policy
+    h4 
+        @apply text-white font-light rem:text-[16px]
+    
+// *******************************************************************************Responsive************************************************
+.footer-top-mobile
+    @apply block xl:hidden
+    @apply pt-12
+
+
+.container-img-mobile
+    @apply flex justify-center items-center gap-5
+    img
+        @apply w-20 h-auto
+
+@media (max-width: 500px)
+    .footer-top-item_2
+        @apply ml-0 mr-0 pt-0
+    .footer-top-body 
+        li
+            p, a
+                @apply rem:text-[12px]
+    .policy
+        h4
+            @apply rem:text-[12px]
+    .footer-top-title
+        h1
+            @apply rem:text-[16px]
