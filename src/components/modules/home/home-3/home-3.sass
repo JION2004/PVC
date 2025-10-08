@@ -1,2 +1,58 @@
 .home-3
-    @apply w-auto min-h-[500px] md:min-h-[700px] rem:h-[960px]
+    @apply w-full py-16
+
+.card-container
+    @apply flex flex-wrap justify-center gap-8 mt-8
+
+// Ghi chú: Kiểu cho mỗi card item
+.card-item
+    @apply relative bg-white rounded-lg shadow-xl overflow-hidden
+    width: 380px
+    height: 600px
+    max-width: 100%
+
+    // Ghi chú: Container cho ảnh
+    &__image
+        @apply w-full h-full bg-white
+        @apply flex justify-center items-center
+        // Ghi chú: Thêm margin-top vào transition
+        transition: height 0.5s ease, margin-top 0.5s ease
+        img
+            @apply w-full h-full object-cover
+            transition: width 0.5s ease 0.1s, border-radius 0.5s ease 0.1s
+
+    // Ghi chú: Container cho nội dung
+    &__content
+        @apply w-full bg-white p-6 text-center
+        height: 40%
+
+    // Ghi chú: Hiệu ứng khi hover
+    &:hover
+        .card-item__image
+            // Ghi chú: Thêm khoảng trắng phía trên ảnh tại đây
+            margin-top: 20px
+            // Ghi chú: Chiều cao của ảnh được tính lại để vừa với khoảng trống
+            // 60% (chiều cao mong muốn) - 20px (khoảng trắng trên)
+            height: calc(60% - 20px)
+            img
+                width: 90%
+                @apply rounded-lg
+
+    // Ghi chú: Kiểu cho tiêu đề
+    &__title
+        @apply text-2xl font-bold text-gray-800
+
+    // Ghi chú: Kiểu cho thông tin
+    &__info
+        @apply text-gray-600 mt-2
+
+// Ghi chú: Responsive
+@screen md
+    .card-item
+        width: 320px
+        height: 500px
+
+@screen sm
+    .card-item
+        width: 100%
+        height: 500px

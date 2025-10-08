@@ -4,6 +4,10 @@
 .introduce-top
     @apply w-full md:rem:w-[800px]
 
+.introduce-top_body
+    p
+        @apply font-normal text-sm sm:text-base md:text-lg text-gray-300
+
     
 .introduce-top_button
     button
@@ -20,7 +24,7 @@
             &::before
                 content: ""
                 position: absolute
-                left: -30px 
+                left: -30px // Half of the gap (60px)
                 top: 50%
                 transform: translateY(-50%)
                 width: 1px
@@ -29,7 +33,11 @@
                 @screen sm
                     left: -15px // Adjust for smaller gap on sm screens if needed
                 @screen md
-                    left: -80px // Revert for larger gap on md screens
+                    left: -30px // Revert for larger gap on md screens
+                @screen xl
+                    display: block // Ensure it's visible on xl and larger
+                @media (max-width: theme('screens.xl'))
+                    display: none // Hide on screens smaller than xl
     h1
         @apply font-extrabold text-3xl sm:text-4xl md:text-5xl text-white
     h4
