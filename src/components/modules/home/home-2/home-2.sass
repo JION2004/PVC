@@ -1,46 +1,17 @@
 .home-2
     @apply w-auto min-h-[500px] md:min-h-[700px] rem:h-[960px]
+.bottom-grid
 
-.introduce-top
-    @apply w-full md:rem:w-[800px]
-
-.introduce-top_body
+    h1 
+        @apply  font-extrabold  md:rem:text-[50px] xs:text-xl
+    h2 
+        @apply rem:text-[20px] font-bold md:rem:text-[15px] xs:text-[12px]
     p
-        @apply font-normal text-sm sm:text-base md:text-lg text-gray-300
-
-    
-.introduce-top_button
-    button
-        &:hover
-                @apply bg-[#41924F] 
-                i
-                    transform: translateX(4px)
-.introduce-bottom_top
-    @apply flex-wrap
-    ul
-        @apply w-full sm:w-1/2 md:w-1/4 h-12 m-0 p-0
-        position: relative
-        &:not(:first-child)
-            &::before
-                content: ""
-                position: absolute
-                left: -30px // Half of the gap (60px)
-                top: 50%
-                transform: translateY(-50%)
-                width: 1px
-                height: 120px
-                background-color: #fff // Or any color you prefer
-                @screen sm
-                    left: -15px // Adjust for smaller gap on sm screens if needed
-                @screen md
-                    left: -30px // Revert for larger gap on md screens
-                @screen xl
-                    display: block // Ensure it's visible on xl and larger
-                @media (max-width: theme('screens.xl'))
-                    display: none // Hide on screens smaller than xl
-    h1
-        @apply font-extrabold text-3xl sm:text-4xl md:text-5xl text-white
-    h4
-        @apply font-bold text-base sm:text-lg md:text-xl text-white
-    p
-        @apply font-normal text-sm sm:text-base md:text-lg text-gray-300
+        @apply rem:text-[16px] font-normal md:text-xs
+@layer components 
+    .boder-center 
+        @apply text-center
+    @screen xl 
+        .boder-center 
+            @apply border-x-2
+        

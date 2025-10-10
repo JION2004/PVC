@@ -168,4 +168,38 @@ export function swiperInit() {
     const index = $(this).index();
     home1Swiper.slideToLoop(index);
   });
+
+  // Initialize Swiper for home-3-slider
+  new Swiper(".home-3-slider .swiper-container", {
+    modules: [Navigation, Autoplay],
+    loop: true,
+    speed: 1000,
+    spaceBetween: 30, // Khoảng cách giữa các card
+    autoplay: {
+      delay: 40000000000,
+      disableOnInteraction: false,
+    },
+    navigation: {
+      nextEl: ".home-3-slider .swiper-button-next",
+      prevEl: ".home-3-slider .swiper-button-prev",
+    },
+    // Responsive breakpoints
+    breakpoints: {
+      // when window width is >= 320px
+      320: {
+        slidesPerView: 1,
+        spaceBetween: 20,
+      },
+      // when window width is >= 768px
+      768: {
+        slidesPerView: 2,
+        spaceBetween: 30,
+      },
+      // when window width is >= 1024px
+      1024: {
+        slidesPerView: 4, // Hiển thị 4 card trên màn hình lớn
+        spaceBetween: 30,
+      },
+    },
+  });
 }

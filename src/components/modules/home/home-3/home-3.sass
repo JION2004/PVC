@@ -1,52 +1,66 @@
 .home-3
     @apply w-full py-16
 
-.card-container
-    @apply flex flex-wrap justify-center gap-8 mt-8
+// Ghi chú: Kiểu cho container của slider
+.home-3-slider
+    @apply relative px-12 
+    // Padding cho các nút điều hướng
 
-// Ghi chú: Kiểu cho mỗi card item
-.card-item
-    @apply relative bg-[#41924F] rounded-lg shadow-xl overflow-hidden
-    width: 380px
-    height: 600px
-    max-width: 100%
+    .swiper-slide
+        // Cần thiết để hiệu ứng hover không bị cắt xén bởi slide khác
+        @apply overflow-visible
 
-    // Ghi chú: Container cho ảnh
-    &__image
-        @apply w-full h-full bg-[#41924F]
-        @apply flex justify-center items-center
-        // Ghi chú: Thêm margin-top vào transition
-        transition: height 0.5s ease, margin-top 0.5s ease
-        img
-            @apply w-full h-full object-cover
-            transition: width 0.5s ease 0.1s, border-radius 0.5s ease 0.1s
+    // Ghi chú: Kiểu cho mỗi card item BÊN TRONG slide
+    .card-item
+        @apply relative bg-green-700 rounded-lg shadow-xl overflow-hidden mx-auto
+        // Ghi chú: Kích thước mặc định của card (như đã thiết lập trước đó)
+        width: 350px
+        height: 500px
+        max-width: 100%
 
-    // Ghi chú: Container cho nội dung
-    &__content
-        @apply w-full bg-[#41924F] p-6 text-center
-        height: 40%
-
-    // Ghi chú: Hiệu ứng khi hover
-    &:hover
-        .card-item__image
-            // Ghi chú: Thêm khoảng trắng phía trên ảnh tại đây
-            margin-top: 20px
-            // Ghi chú: Chiều cao của ảnh được tính lại để vừa với khoảng trống
-            // 60% (chiều cao mong muốn) - 20px (khoảng trắng trên)
-            height: calc(60% - 20px)
+        // Container cho ảnh
+        &__image
+            @apply w-full h-full bg-green-700
+            @apply flex justify-center items-center
+            transition: height 0.5s ease, margin-top 0.5s ease
             img
-                width: 90%
-                @apply rounded-lg
+                @apply w-full h-full object-cover
+                transition: width 0.5s ease 0.1s, border-radius 0.5s ease 0.1s
 
-    // Ghi chú: Kiểu cho tiêu đề
-    &__title
-        @apply text-2xl font-bold text-white
+        // Container cho nội dung
+        &__content
+            @apply w-full bg-green-700 p-6 text-center
+            height: 40%
 
-    // Ghi chú: Kiểu cho thông tin
-    &__info
-        @apply text-gray-200 mt-2
+        // Ghi chú: Hiệu ứng hover trên card
+        &:hover
+            .card-item__image
+                margin-top: 20px
+                height: calc(60% - 50px)
+                img
+                    width: 92%
+                    @apply rounded-lg
 
-// Ghi chú: Responsive
+        // Kiểu cho tiêu đề và thông tin
+        &__title
+            @apply text-2xl font-bold text-white
+        &__info
+            @apply text-gray-300 mt-2 text-lg
+
+    // Ghi chú: Kiểu cho các nút điều hướng
+    .swiper-button-next, .swiper-button-prev
+        color: #41924F
+        top: 50%
+        transform: translateY(-50%)
+
+    .swiper-button-prev
+        left: 0
+
+    .swiper-button-next
+        right: 0
+
+// Ghi chú: Responsive cho kích thước card
+// Kích thước của slider được điều khiển trong swiper.js
 @screen md
     .card-item
         width: 320px
@@ -54,5 +68,6 @@
 
 @screen sm
     .card-item
-        width: 100%
+        width: 90% 
         height: 500px
+        // Chiếm 90% chiều rộng slide trên mobile

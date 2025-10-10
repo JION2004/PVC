@@ -5,41 +5,28 @@ section.home-3(setBackground="./img/section3.png")
                 h1(class="text-center uppercase rem:text-[48px text-[#41924F] sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl") Lĩnh vực hoạt động
             .text 
                 p(class="text-center font-normal rem:text-[20px]") Xí nghiệp cung cấp đa đạng các dịch vụ logistic và cảng biển, từ lưu trữ vận tải đến xếp dỡ và bảo dưỡng thiết bị
-        
-        // Container cho các card
-        .card-container(class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mt-8")
-            // Bắt đầu một card
-            .card-item
-                .card-item__image
-                    img(src="./img/1.jpg", alt="Image")
-                .card-item__content
-                    h3.card-item__title Dịch vụ Bốc xếp
-                    p.card-item__info Xí nghiệp cung cấp đa đạng các dịch vụ logistic và cảng biển, từ lưu trữ vận tải đến xếp dỡ và bảo dưỡng thiết bị
-            // Kết thúc một card
 
-            // Bắt đầu một card
-            .card-item
-                .card-item__image
-                    img(src="./img/1.jpg", alt="Image")
-                .card-item__content
-                    h3.card-item__title Dịch vụ Bốc xếp
-                    p.card-item__info Xí nghiệp cung cấp đa đạng các dịch vụ logistic và cảng biển, từ lưu trữ vận tải đến xếp dỡ và bảo dưỡng thiết bị
-            // Kết thúc một card
+        // Swiper container for home-3 cards
+        .home-3-slider.relative.mt-8
+            .swiper.swiper-container
+                .swiper-wrapper
+                    //- Card mixin for reusability
+                    mixin card(image, title, info)
+                        .swiper-slide
+                            .card-item
+                                .card-item__image
+                                    img(src=image, alt=title)
+                                .card-item__content
+                                    h3.card-item__title= title
+                                    p.card-item__info= info
 
-            // Bắt đầu một card
-            .card-item
-                .card-item__image
-                    img(src="./img/1.jpg", alt="Image")
-                .card-item__content
-                    h3.card-item__title Dịch vụ Bốc xếp
-                    p.card-item__info Xí nghiệp cung cấp đa đạng các dịch vụ logistic và cảng biển, từ lưu trữ vận tải đến xếp dỡ và bảo dưỡng thiết bị
-            // Kết thúc một card
-            
-            // Bắt đầu một card
-            .card-item
-                .card-item__image
-                    img(src="./img/1.jpg", alt="Image")
-                .card-item__content
-                    h3.card-item__title Dịch vụ Bốc xếp
-                    p.card-item__info Xí nghiệp cung cấp đa đạng các dịch vụ logistic và cảng biển, từ lưu trữ vận tải đến xếp dỡ và bảo dưỡng thiết bị
-            // Kết thúc một card
+                    //- Create slides using the mixin
+                    +card("./img/1.jpg", "Dịch vụ Bốc xếp", "Cung cấp các giải pháp bốc xếp hàng hóa chuyên nghiệp, an toàn và hiệu quả.")
+                    +card("./img/1.jpg", "Vận tải Container", "Dịch vụ vận tải container đa phương thức, kết nối các cảng biển lớn.")
+                    +card("./img/1.jpg", "Lưu trữ & Kho bãi", "Hệ thống kho bãi hiện đại, đảm bảo an toàn cho hàng hóa của bạn.")
+                    +card("./img/1.jpg", "Bảo dưỡng Thiết bị", "Dịch vụ bảo dưỡng, sửa chữa các loại thiết bị, phương tiện cảng biển.")
+                    +card("./img/1.jpg", "Logistics Trọn gói", "Cung cấp giải pháp logistics tích hợp, từ A đến Z cho doanh nghiệp.")
+
+            // Add Navigation
+            .swiper-button-prev.text-white
+            .swiper-button-next.text-white
