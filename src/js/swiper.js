@@ -176,7 +176,7 @@ export function swiperInit() {
     speed: 1000,
     spaceBetween: 30, // Khoảng cách giữa các card
     autoplay: {
-      delay: 40000000000,
+      delay: 4000,
       disableOnInteraction: false,
     },
     navigation: {
@@ -201,5 +201,15 @@ export function swiperInit() {
         spaceBetween: 30,
       },
     },
+  });
+
+  // Initialize Swiper for home-4-slider
+  new Swiper(".home-4-slider", {
+    modules: [Navigation, Autoplay],
+    loop: true,
+    speed: 600,
+    slidesPerView: 4,
+    centeredSlides: false,
+    spaceBetween: 0,
   });
 }
