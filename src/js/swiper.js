@@ -94,9 +94,9 @@ export function swiperInit() {
   // Initialize Swiper for home-1-slider
   const home1SliderTexts = [
     "Tiền thân là Xí nghiệp Kết cấu thép với chức năng chính là cung cấp các dịch vụ xây lắp công nghiệp đầu khí cho các dự án khai thác, vận chuyển, tàng trữ và chế biến dầu khí.",
-    "Phàm nhân tu tiên (Nhân giới) ",
-    "Phàm nhân  tu tiên (Linh giới",
-    "Phàm nhân tu tiên chi tiên giới thiên",
+    "Xí nghiệp chuyên về dàn khoan và dầu kí châu á, lắp ráp dàn khoang, vận chuyển dầu khí xuyên quốc gia  ",
+    "Kinh nghiệm về lắp đặt dàn khoan và đầu khí",
+    "69 đối tác chiến lược trong ngành",
   ];
 
   // Helper function to adjust text position based on its character count
@@ -109,10 +109,10 @@ export function swiperInit() {
 
       if (characterCount < threshold) {
         // If text is short (< 60 chars), move it closer to the pagination
-        slideText.css("bottom", "40px");
+        slideText.css("bottom", "60px");
       } else {
         // If text is long (>= 60 chars), move it up
-        slideText.css("bottom", "130px");
+        slideText.css("bottom", "140px");
       }
     }
   }
@@ -121,10 +121,6 @@ export function swiperInit() {
     modules: [Navigation, Pagination, Autoplay],
     loop: true,
     speed: 1000,
-    pagination: {
-      el: ".swiper-pagination",
-      clickable: true,
-    },
     navigation: {
       nextEl: ".swiper-button-next",
       prevEl: ".swiper-button-prev",
