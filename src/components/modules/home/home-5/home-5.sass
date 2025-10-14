@@ -1,7 +1,7 @@
 .home-5
     @apply w-full py-16
 .col-gird
-    @apply flex gap-6 w-full rem:h-[580px] my-20 rounded-2 justify-items-center
+    @apply flex gap-6 w-full rem:h-[580px] my-6 rounded-2 justify-items-center
 
 .img-container
     @apply p-4 
@@ -45,18 +45,20 @@
             &:hover
                 @apply text-[#41924F]
 .date
-    @apply flex gap-8
+    @apply flex items-center gap-2
+    .dot
+        @apply w-1 h-1 bg-gray-400 rounded-full
 .col-body
     @apply flex flex-col gap-1
 
 @media (max-width: 1024px)
-    .col-big
+    .col-gird
         @apply flex-col h-auto my-8
-    .col
+    .col-item-left
         @apply w-full
         img
             @apply h-auto
-    .col_2
+    .col-item-right
         @apply gap-y-4
         div
             @apply h-auto

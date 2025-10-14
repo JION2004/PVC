@@ -17,28 +17,43 @@ $(document).ready(function () {
   menuSpy();
   header.init();
   swiperInit();
-  clickScrollToDiv('.fix a', () => document.documentElement.style.getPropertyValue('--header-height').replace('px', ''));
+  clickScrollToDiv(".fix a", () =>
+    document.documentElement.style
+      .getPropertyValue("--header-height")
+      .replace("px", "")
+  );
 
-  const sections = ['#home-1', '#home-2', '#home-3', '#home-4', '#home-5'];
-  const dots = $('.fix a');
+  const sections = ["#home-1", "#home-2", "#home-3", "#home-4", "#home-5"];
+  const dots = $(".fix a");
 
-  $(window).on('scroll', function() {
+  $(window).on("scroll", function () {
     const scrollPosition = $(window).scrollTop();
-    const headerHeight = parseFloat(document.documentElement.style.getPropertyValue('--header-height') || 0);
+    const headerHeight = parseFloat(
+      document.documentElement.style.getPropertyValue("--header-height") || 0
+    );
 
     let activeSection = null;
 
     for (let i = sections.length - 1; i >= 0; i--) {
       const section = $(sections[i]);
-      if (section.length && section.offset().top <= scrollPosition + headerHeight + 100) {
+      if (
+        section.length &&
+        section.offset().top <= scrollPosition + headerHeight + 100
+      ) {
         activeSection = sections[i];
         break;
       }
     }
 
-    dots.removeClass('active');
+    dots.removeClass("active");
     if (activeSection) {
-      $(`.fix a[href="${activeSection}"]`).addClass('active');
+      $(".fix a[href=\"".concat(activeSection, "\"]")).addClass("active");
+
+      if (activeSection === "#home-3" || activeSection === "#home-5") {
+        $(".fix").addClass("green");
+      } else {
+        $(".fix").removeClass("green");
+      }
     }
   });
 });
