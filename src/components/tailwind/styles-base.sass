@@ -1,6 +1,7 @@
 @layer base
 	html
 		scroll-padding-top: 100px
+		font-family: "Exo 2", sans-serif
 	html, body
 		font-size: 17px
 		@screen md
@@ -118,3 +119,11 @@
 			transition: visibility 1s
 			visibility: hidden
 			@apply mb-0
+.btn-gradient
+	@apply inline-flex items-center gap-2 px-6 py-3 text-white bg-[#2B378D] font-semibold -sm:hidden 
+	border: 3px solid transparent
+	border-image: linear-gradient(to right, #56606e, #ffffff)
+	border-image-slice: 1
+	transition: 0.3s ease
+	&:hover
+		background-color: #41924F

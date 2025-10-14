@@ -1,28 +1,45 @@
 .home-5
     @apply w-full py-16
-.col-big
+.col-gird
     @apply flex gap-6 w-full rem:h-[580px] my-20 rounded-2 justify-items-center
-.col
-    @apply w-1/2  bg-gray-100 rounded-2 overflow-hidden
-    img
-        @apply rem:h-[369px] w-full pt-1 object-cover transition duration-300 ease-in-out
-    &:hover
+
+.img-container
+    @apply p-4 
+
+.img-zoom-wrapper
+    @apply overflow-hidden h-full w-full 
+    aspect-ratio: 16/9
+
+.col-item-left
+    @apply w-1/2  bg-gray-100 rounded-2 overflow-hidden p-3
+    .img-container
+        @apply p-0
+    .img-zoom-wrapper
         img
+            @apply w-full h-full object-cover transition duration-300 ease-in-out
+    &:hover
+        .img-zoom-wrapper img
             @apply transform scale-110
     h1 
         @apply font-bold rem:text-[20px] py-3
         &:hover
             @apply text-[#41924F]
 
-.col_2
-    @apply flex flex-col justify-between rounded-2
+.col-item-right
+    @apply w-1/2  flex flex-col justify-between 
     div
-        @apply flex gap-2 rem:h-[173px] w-full  bg-gray-100 items-center overflow-hidden
-        img
-            @apply rem:h-[141px] w-auto px-2 rounded-3 transition duration-300 ease-in-out
-        &:hover
+        @apply p-1 flex gap-2 rem:h-[173px] w-full  bg-gray-100 items-center
+        .img-container
+            @apply w-2/5 h-full p-0 overflow-hidden
+        .img-zoom-wrapper
+            
             img
-                @apply transform scale-110
+                @apply w-full h-full object-cover transition duration-300 ease-in-out p-1 
+        .col-body
+            @apply w-3/5
+        &:hover
+            .img-zoom-wrapper img
+                @apply transform scale-110 
         h1
             @apply font-bold rem:text-[20px] transition duration-300 ease-in-out
             &:hover

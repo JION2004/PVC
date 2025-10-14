@@ -176,8 +176,8 @@ export function swiperInit() {
       disableOnInteraction: false,
     },
     navigation: {
-      nextEl: ".home-3-slider .swiper-button-next",
-      prevEl: ".home-3-slider .swiper-button-prev",
+      nextEl: ".home-3-global-next",
+      prevEl: ".home-3-global-prev",
     },
     // Responsive breakpoints
     breakpoints: {

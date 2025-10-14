@@ -1,6 +1,6 @@
 .home-4
     position: relative
-    height: 100vh
+    height: 824px
     .list
         display: flex
         width: 100%
@@ -18,12 +18,13 @@
                 filter: brightness(0.7)
             .content
                 position: absolute
-                bottom: 20px
-                left: 20px
+                bottom: 60px
+                left: 40px
                 color: white
                 opacity: 1
+                z-index: 2
                 h2
-                    font-size: 1.1rem
+                    font-size: 24px
                     font-weight: bold
                 p
                     font-size: 1.2rem
@@ -37,6 +38,22 @@
                     border-radius: 5px
             &:hover
                 flex: 5
+                display: flex // Thêm flex để căn giữa
+                align-items: center // Căn giữa ảnh theo chiều dọc
+            &::before
+                content: ''
+                position: absolute
+                bottom: 0
+                left: 0
+                width: 100%
+                // --- ĐIỀU CHỈNH CHIỀU CAO LỚP PHỦ TẠI ĐÂY ---
+                height: 50% 
+                // --- ĐIỀU CHỈNH MÀU SẮC LỚP PHỦ TẠI ĐÂY (ví dụ: #0000FF cho màu xanh đậm) ---
+                background: linear-gradient(to top,#41924F, transparent) // Gradient from blue to transparent
+                z-index: 1 // Ensure it's above the image but below text
+.container-title
+    h1
+        @apply rem:text-[48px] -md:text-30 -sm:text-xl
 @media (max-width: 768px)
     .home-4
         height: auto
